@@ -19,15 +19,21 @@ export class DataService {
     this.goals.next(goal)
   }
 
-  apiURL = 'http://localhost:8080';
+  //apiURL = 'http://localhost:8080';
+  apiURL = 'http://104.198.244.0:8192';
 
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':'*'
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Methods':'GET' 
       })
   }  
+
+  
+
 
   getGoals(): Observable<GoalsApi> {
     return this.http.get<GoalsApi>(this.apiURL + '/questions', this.httpOptions)
