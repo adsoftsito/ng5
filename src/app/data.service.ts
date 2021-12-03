@@ -20,7 +20,7 @@ export class DataService {
   }
 
   //apiURL = 'http://localhost:8080';
-  apiURL = 'http://104.198.244.0:8192';
+  apiURL = 'http://34.125.7.41:8080/users-api';
 
   // Http Options
   httpOptions = {
@@ -36,7 +36,7 @@ export class DataService {
 
 
   getGoals(): Observable<GoalsApi> {
-    return this.http.get<GoalsApi>(this.apiURL + '/questions', this.httpOptions)
+    return this.http.get<GoalsApi>(this.apiURL + '/users', this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -44,7 +44,7 @@ export class DataService {
   }   
 
   newGoal(payload): Observable<GoalsApi> {
-    return this.http.post<GoalsApi>(this.apiURL + '/questions', JSON.stringify(payload), this.httpOptions)
+    return this.http.post<GoalsApi>(this.apiURL + '/users', JSON.stringify(payload), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

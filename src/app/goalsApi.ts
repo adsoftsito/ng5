@@ -1,5 +1,6 @@
 export class GoalsApi {
-    title: string;
-    description: string;
-
+    name: string;
+    email: string;
+    age: string;
+    comments: string;
   }
