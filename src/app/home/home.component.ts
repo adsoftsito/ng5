@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit {
 
     this._data.getGoals()
      .subscribe((data: any) => {
-      alert(JSON.stringify(data.content));
+      alert(JSON.stringify(data.users));
 
-      this.goals = data.content;
+      this.goals = data.users;
       this._data.changeGoal(this.goals);
 
     });
@@ -58,8 +58,10 @@ export class HomeComponent implements OnInit {
   AgregarMeta(){
 
     var payload = {
-      title : this.goalText,
-      description : this.goalText
+      name : this.goalText,
+      email : "adsoft@live.com.mx",
+      age: "90",
+      comments: "Sir adsoft"
     }
 
     this._data.newGoal(payload)
